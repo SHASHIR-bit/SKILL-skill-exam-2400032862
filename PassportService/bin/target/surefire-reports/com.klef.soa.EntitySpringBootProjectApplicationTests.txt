@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.klef.soa.EntitySpringBootProjectApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.184 s -- in com.klef.soa.EntitySpringBootProjectApplicationTests

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.klef.soa.test.PassportRepositoryTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.342 s -- in com.klef.soa.test.PassportRepositoryTest

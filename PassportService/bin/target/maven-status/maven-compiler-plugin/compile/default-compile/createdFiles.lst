@@ -1,0 +1,9 @@
+com\klef\soa\exception\ResourceNotFoundException.class
+com\klef\soa\entity\Passport.class
+com\klef\soa\service\PassportService.class
+com\klef\soa\exception\GlobalExceptionHandler.class
+com\klef\soa\repository\PassportRepository.class
+com\klef\soa\controller\PassportController.class
+com\klef\soa\configuration\SwaggerConfig.class
+com\klef\soa\service\PassportServiceImpl.class
+com\klef\soa\EntitySpringBootProjectApplication.class
