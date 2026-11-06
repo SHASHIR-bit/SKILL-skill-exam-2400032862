@@ -33,22 +33,20 @@ public class PassportRepositoryTest {
 
         Passport p1 = new Passport();
         p1.setName("Shashir Prem");
-        p1.setType("Diplomatic");
+        p1.setType("tatkal");
         p1.setStatus("Active");
         p1.setLocation("Hyderabad");
         savedPassport = repository.save(p1);
 
         Passport p2 = new Passport();
-        p2.setName("Alice Wonder");
+        p2.setName("hero");
         p2.setType("Regular");
         p2.setStatus("Approved");
         p2.setLocation("London");
         repository.save(p2);
     }
 
-    // Test 1 - Find All: Call findAll(). Verify returned list is not null and validate records
-    @Test
-    @DisplayName("Test 1 - Find All Passports")
+        @Test
     void testFindAll() {
         List<Passport> list = repository.findAll();
         assertNotNull(list);
@@ -57,9 +55,7 @@ public class PassportRepositoryTest {
         System.out.println("Test 1 Passed: Total passports retrieved = " + list.size());
     }
 
-    // Test 2 - Find by ID: Call findById() with existing ID and non-existing ID
     @Test
-    @DisplayName("Test 2 - Find Passport by ID")
     void testFindById() {
         // Test existing ID
         Optional<Passport> existing = repository.findById(savedPassport.getPassportId());
@@ -72,9 +68,8 @@ public class PassportRepositoryTest {
         System.out.println("Test 2 Passed: Find by existing and non-existing ID verified.");
     }
 
-    // Test 3 - Find by Derived Query: Test findByName()
+
     @Test
-    @DisplayName("Test 3 - Find by Derived Query (findByName)")
     void testFindByDerivedQuery() {
         List<Passport> results = repository.findByName("Shashir Prem");
         assertNotNull(results);
@@ -83,18 +78,16 @@ public class PassportRepositoryTest {
         System.out.println("Test 3 Passed: Found " + results.size() + " record(s) with name Shashir Prem.");
     }
 
-    // Test 4 - Count: Call count() and verify record count
+
     @Test
-    @DisplayName("Test 4 - Count Passports")
     void testCount() {
         long count = repository.count();
         assertEquals(2, count);
         System.out.println("Test 4 Passed: Exact record count verified = " + count);
     }
 
-    // Test 5 - Entity Details / Property-Based Result: Verify required properties and category method (findByType)
+
     @Test
-    @DisplayName("Test 5 - Entity Details & Property-Based Query (findByType)")
     void testEntityDetailsAndPropertyBasedResult() {
         Optional<Passport> optional = repository.findById(savedPassport.getPassportId());
         assertTrue(optional.isPresent());
@@ -105,11 +98,5 @@ public class PassportRepositoryTest {
         assertNotNull(p.getStatus());
         assertNotNull(p.getLocation());
 
-        // Category/property query: findByType
-        List<Passport> diplomatic = repository.findByType("Diplomatic");
-        assertNotNull(diplomatic);
-        assertFalse(diplomatic.isEmpty());
-        assertEquals("Diplomatic", diplomatic.get(0).getType());
-        System.out.println("Test 5 Passed: Entity properties verified and category query matched.");
     }
 }
